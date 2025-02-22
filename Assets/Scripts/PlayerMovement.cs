@@ -10,11 +10,14 @@ public class PlayerMovement : MonoBehaviour
     public float rotationSpeed;
     private Vector2 movementValue;
     private float lookValue;
+    private Rigidbody rb;
     // Update is called once per frame
 
     private void Awake() {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        rb = GetComponent<Rigidbody>();
     }
 
     public void OnMove(InputValue value) {
@@ -41,6 +44,10 @@ public class PlayerMovement : MonoBehaviour
         // if (Input.GetKey(KeyCode.D)) {
         //     transform.Translate(speed * Time.deltaTime, 0, 0);
         // }
+
+        //This is the new way but doesn't work with the primitive player object
+        // rb.AddRelativeForce(movementValue.x * Time.deltaTime, 0, movementValue.y * Time.deltaTime);
+        // rb.AddRelativeTorque(0, lookValue * Time.deltaTime, 0);
 
         transform.Translate(
             movementValue.x * Time.deltaTime,
