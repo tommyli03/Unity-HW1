@@ -15,12 +15,14 @@ public class EnemyFSM : MonoBehaviour
     public GameObject bulletPrefab;
     public float fireRate;
 
+    public ParticleSystem muzzleEffect;
     void Shoot() {
         var timeSinceLastShoot = Time.time - lastShootTime;
         if (timeSinceLastShoot > fireRate) {
             lastShootTime = Time.time;
             Instantiate(bulletPrefab, transform.position, transform.rotation);
         }
+        muzzleEffect.Play();
     }
 
     private void Awake()

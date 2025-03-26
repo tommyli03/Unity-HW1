@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 7393431278500875789}
   - component: {fileID: 7805355050263394258}
   - component: {fileID: -3777456008607048758}
+  - component: {fileID: 872239718724295848}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -300,6 +301,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &872239718724295848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057690234338542708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac73393b7c6404980908d60eb6e78ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefab: {fileID: 8503012968498426118, guid: 7cccd705359114d9fad90923d3182a6c, type: 3}
 --- !u!1 &4898383566770779842
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,3 +417,6 @@ MonoBehaviour:
   baseTransform: {fileID: 0}
   baseAttackDistance: 2
   playerAttackDistance: 3
+  lastShootTime: 0
+  bulletPrefab: {fileID: 0}
+  fireRate: 0
