@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 7805355050263394258}
   - component: {fileID: -3777456008607048758}
   - component: {fileID: 872239718724295848}
+  - component: {fileID: -7594745864891460935}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -238,6 +239,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 3509365085966950723, guid: c5aef97a7d85648f999727e836004779, type: 3}
   shootPoint: {fileID: 0}
+  muzzleEffect: {fileID: 0}
+  shootSound: {fileID: 0}
+  bulletsAmount: 0
+  fireRate: 0
 --- !u!114 &2073141638935786341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +319,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particlePrefab: {fileID: 8503012968498426118, guid: 7cccd705359114d9fad90923d3182a6c, type: 3}
+--- !u!114 &-7594745864891460935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057690234338542708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f15ff1d61d7d4e7d8cd6f548add4643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4898383566770779842
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +373,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1443931240970646778}
   - component: {fileID: 8042428553185095421}
-  - component: {fileID: 1137356349657759743}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -400,23 +416,3 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   detectedObject: {fileID: 0}
---- !u!114 &1137356349657759743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7215631011037308805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5ac6519f4f334cc5b59661bf37a6522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  sightSensor: {fileID: 8042428553185095421}
-  baseTransform: {fileID: 0}
-  baseAttackDistance: 2
-  playerAttackDistance: 3
-  lastShootTime: 0
-  bulletPrefab: {fileID: 0}
-  fireRate: 0

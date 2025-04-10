@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyFSM : MonoBehaviour
 {
+    // Animator animator;
     public enum EnemyState { GoToBase, AttackBase, ChasePlayer, AttackPlayer }
     public EnemyState currentState;
     public Sight sightSensor;
@@ -17,6 +18,7 @@ public class EnemyFSM : MonoBehaviour
 
     public ParticleSystem muzzleEffect;
     void Shoot() {
+        // animator.SetBool("Shooting", true);
         var timeSinceLastShoot = Time.time - lastShootTime;
         if (timeSinceLastShoot > fireRate) {
             lastShootTime = Time.time;
@@ -28,7 +30,8 @@ public class EnemyFSM : MonoBehaviour
     private void Awake()
     {
         baseTransform = GameObject.Find("BaseDamagePoint").transform;
-        agent = GetComponentInParent<UnityEngine.AI.NavMeshAgent>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        // animator = GetComponentInParent<Animator>();
     }
 
     // Update is called once per frame
@@ -46,6 +49,7 @@ public class EnemyFSM : MonoBehaviour
     }
 
     void GoToBase() {
+        // animator.SetBool("Shooting", false);
         agent.isStopped = false;
         agent.SetDestination(baseTransform.position);
         if (sightSensor.detectedObject != null) {
@@ -64,6 +68,7 @@ public class EnemyFSM : MonoBehaviour
     }
 
     void ChasePlayer() {
+        // animator.SetBool("Shooting", false);
         agent.isStopped = false;
         if (sightSensor.detectedObject == null) {
             currentState = EnemyState.GoToBase;

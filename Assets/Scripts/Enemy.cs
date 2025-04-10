@@ -6,12 +6,22 @@ public class Enemy : MonoBehaviour
 {
     private void Start()
     {
-        EnemiesManager.instance.AddEnemy(this);
+        if (EnemiesManager.instance != null)
+        {
+            EnemiesManager.instance.AddEnemy(this);
+        }
+        else
+        {
+            Debug.LogWarning("EnemiesManager instance not found in Start()");
+        }
     }
 
     private void OnDestroy()
     {
-        EnemiesManager.instance.RemoveEnemy(this);
-
+        if (EnemiesManager.instance != null)
+        {
+            EnemiesManager.instance.RemoveEnemy(this);
+        }
     }
+
 }
